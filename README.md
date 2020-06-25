@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# roughnet
+# roughnet <img src="man/figures/logo.png" align="right"/>
 
 <!-- badges: start -->
 
