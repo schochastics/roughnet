@@ -1,15 +1,22 @@
 Package: roughnet
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Visualize Networks with roughjs
+Version: 0.1.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "David",
+           family = "Schoch",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "david.schoch@manchester.ac.uk")
+Description: Visualize networks using the javascript library roughjs which allows to draw sketchy, hand-drawn-like networks.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Imports: 
+    igraph,
+    graphlayouts,
+    grDevices,
+    jsonlite,
+    htmlwidgets
+Suggests: 
+    pagedown

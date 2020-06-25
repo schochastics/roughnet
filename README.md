@@ -1,27 +1,20 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 
 # roughnet
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/roughnet)](https://CRAN.R-project.org/package=roughnet)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/roughnet)](https://CRAN.R-project.org/package=roughnet)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
-Using the java script library [rough.js](https://roughjs.com/) to draw sketchy, hand-drawn-like networks.  
-(*Checkout [ggrough](https://xvrdm.github.io/ggrough/) for turning general ggplot objects into sketchy drawings*)
+Using the java script library [rough.js](https://roughjs.com/) to draw
+sketchy, hand-drawn-like networks.  
+(*Checkout [ggrough](https://xvrdm.github.io/ggrough/) for turning
+general ggplot objects into sketchy drawings*)
 
 ![](man/figures/example.png)
 
@@ -29,14 +22,14 @@ Using the java script library [rough.js](https://roughjs.com/) to draw sketchy, 
 
 You can install the developers version of roughnet with:
 
-```{r eval=FALSE}
+``` r
 # install.packages("remotes")
 remotes::install_github("schochastics/roughnet")
 ```
 
 ## Example
 
-```{r example,eval = FALSE}
+``` r
 library(roughnet)
 library(igraph)
 
