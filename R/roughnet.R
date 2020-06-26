@@ -12,6 +12,7 @@
 #' * \emph{shape} either "circle" or "rectangle"
 #' * \emph{fill} vertex fill color
 #' * \emph{color} vertex stroke color
+#' * \emph{stroke} stroke size
 #' * \emph{fillstyle} one of "hachure", "solid", "zigzag", "cross-hatch", "dots", "sunburst", "dashed", "zigzag-line"
 #' * \emph{size} vertex size
 #'
@@ -47,6 +48,12 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     vsize <- 30
   } else{
     vsize <- igraph::V(g)$size
+  }
+
+  if(!"stroke" %in% igraph::vertex_attr_names(g)){
+    vstroke <- 1
+  } else{
+    vstroke <- igraph::V(g)$stroke
   }
 
   if(!"fillstyle" %in% igraph::vertex_attr_names(g)){
@@ -92,7 +99,7 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     color = vcol,
     fill  = vfill,
     fillstyle = vfillstyle,
-    width = 1,
+    width = vstroke,
     size = vsize)
 
   nodes$x <- ifelse(nodes$shape=="rectangle",nodes$x-nodes$size/2,nodes$x)

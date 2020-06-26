@@ -40,7 +40,18 @@ V(g)$fill <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3")[membership(cluster_lo
 V(g)$fillstyle <- c("hachure", "zigzag", "cross-hatch", "dots")[membership(cluster_louvain(g))]
 V(g)$color <- "black"
 V(g)$size <- 30
-roughnet(g,width = 960,height=600)
+V(g)$stroke <- 2
+E(g)$color <- "#AEAEAE"
+roughnet(g,width = 960,height = 600)
 ```
 
 ![](man/figures/karate.png)
+
+You can save the plot with the function `save_roughnet()` (needs
+{{pagedown}} to be installed.)
+
+``` r
+# install.packages("pagedown")
+p <- roughnet(g,width = 960,height=600)
+save_roughnet(p,"karate.png")
+```

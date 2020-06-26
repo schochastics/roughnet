@@ -3,8 +3,11 @@ function drawRect(rc, s) {
      roughness: s.roughness,
      bowing: s.bowing,
      fill: s.fill,
+     fillStyle: s.fillstyle,
+     hachureGap: 4,
+     fillWeight: 0.5,
      stroke: s.color,
-     fillStyle: s.fillstyle
+     strokeWidth: s.width
    });
 }
 
@@ -13,8 +16,11 @@ function drawCirc(rc, s) {
      roughness: s.roughness,
      bowing: s.bowing,
      fill: s.fill,
+     fillStyle: s.fillstyle,
+     hachureGap: 4,
+     fillWeight: 0.5,
      stroke: s.color,
-     fillStyle: s.fillstyle
+     strokeWidth: s.width
    });
 }
 
@@ -51,12 +57,6 @@ HTMLWidgets.widget({
         // Create context for text shape
         const c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
-        console.log(x);
-//        rc.rectangle(0,0,800,600,{
-//          stroke: 'white',
-//          fill: 'white',
-//          fillstyle: 'solid'
-//        });
         x.data.map(function(s) {
           if (s.shape === "rectangle") {
             drawRect(rc, s);
@@ -70,7 +70,7 @@ HTMLWidgets.widget({
         });
       },
       resize: function(width, height) {
-        // TODO: Find a way to redraw the image on resize.
+        // TODO
       }
     }
   }
