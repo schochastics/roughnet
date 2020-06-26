@@ -57,6 +57,6 @@ roughnet(g,width = 960,height = 600)
 You can save the plot with the function `save_roughnet()` (needs {{pagedown}} to be installed.)
 ```{r example_save, eval=FALSE}
 # install.packages("pagedown")
-p <- roughnet(g,width = 960,height=600)
+p <- roughnet(g,width = 960,height = 600)
 save_roughnet(p,"karate.png")
 ```
