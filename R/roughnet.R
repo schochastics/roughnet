@@ -76,7 +76,12 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
 
 
   #layout ----
-  xy <- graphlayouts::layout_with_stress(g)
+  if(!all(c("x","y") %in% igraph::vertex_attr_names(g))){
+    xy <- graphlayouts::layout_with_stress(g)
+  } else{
+    xy <- cbind(igraph::V(g)$x,igraph::V(g)$y)
+  }
+
   if(is.null(width)){
     xy[,1] <- normalise(xy[,1], to = c(100,700))
   } else{
