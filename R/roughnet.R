@@ -107,8 +107,8 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     width = vstroke,
     size = vsize)
 
-  nodes$x <- ifelse(nodes$shape=="rectangle",nodes$x-nodes$size/2,nodes$x)
-  nodes$y <- ifelse(nodes$shape=="rectangle",nodes$y-nodes$size/2,nodes$y)
+  nodes$x <- ifelse(nodes$shape!="circle",nodes$x-nodes$size/2,nodes$x)
+  nodes$y <- ifelse(nodes$shape!="circle",nodes$y-nodes$size/2,nodes$y)
 
   nodes$roughness <- roughness[1]
   nodes$bowing <- bowing[1]
@@ -124,7 +124,7 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     y = xy[el[,1],2],
     xend = xy[el[,2],1],
     yend = xy[el[,2],2],
-    shape="line",
+    shape="edge",
     color = ecols,
     fill = "black",
     fillstyle = "solid",

@@ -57,6 +57,9 @@ HTMLWidgets.widget({
         // Create context for text shape
         const c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
+//          ctx.textAlign = "center";
+//          ctx.textBaseline = "middle";
+
         x.data.map(function(s) {
           if (s.shape === "rectangle") {
             drawRect(rc, s);
@@ -64,14 +67,17 @@ HTMLWidgets.widget({
           if(s.shape === "circle"){
             drawCirc(rc,s);
           }
-          if(s.shape === "line"){
+          if(s.shape === "edge"){
             drawEdge(rc,s);
           }
+//          ctx.fillStyle = "red";
+//          ctx.font = s.size+"px EB Garamond SC";
+//          ctx.fillText("test", s.x, s.y);
         });
       },
       resize: function(width, height) {
         // TODO
       }
-    }
+    };
   }
 });
