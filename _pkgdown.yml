@@ -1,0 +1,19 @@
+title: roughnet
+destination: ../pkgdown_sites/roughnet
+
+template:
+  params:
+    bootswatch: simplex
+  assets: pkgdown/
+
+navbar:
+  right:
+      - icon: fa-newspaper-o
+        text: "News"
+        href: news/index.html
+      - icon: fa-file-code-o
+        text: "Functions"
+        href: reference/index.html
+      - icon: fa-github fa-lg
+        text: "Github"
+        href: https://github.com/schochastics/roughnet

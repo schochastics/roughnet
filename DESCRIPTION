@@ -1,12 +1,12 @@
 Package: roughnet
-Title: Visualize Networks with roughjs
-Version: 0.1.0.9000
+Title: Visualize Networks using roughjs
+Version: 1.0.0
 Authors@R: 
     person(given = "David",
            family = "Schoch",
            role = c("aut", "cre"),
            email = "david.schoch@manchester.ac.uk")
-Description: Visualize networks using the javascript library roughjs which allows to draw sketchy, hand-drawn-like networks.
+Description: Visualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

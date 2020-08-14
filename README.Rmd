@@ -1,7 +1,6 @@
 ---
 output: github_document
 ---
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
@@ -21,7 +20,8 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 Using the java script library [rough.js](https://roughjs.com/) to draw sketchy, hand-drawn-like networks.  
-(*Checkout [ggrough](https://xvrdm.github.io/ggrough/) for turning general ggplot objects into sketchy drawings*)
+(*Checkout [ggrough](https://xvrdm.github.io/ggrough/) for turning general ggplot objects into sketchy drawings*)  
+
 
 ![](man/figures/example.png)
 
@@ -35,6 +35,8 @@ remotes::install_github("schochastics/roughnet")
 ```
 
 ## Example
+
+The package currently only works with {{igraph}} objects by setting styling elements as vertex/edge attributes.
 
 ```{r example,eval = FALSE}
 library(roughnet)
@@ -109,7 +111,7 @@ V(main)$label <- V(main)$name
 # position labels in the (c)enter of the vertex or (n)orth, (e)ast, (s)outh, or (w)est of it 
 V(main)$pos <- c("n","s","s","s","s","e","n","e","s","n") 
 
-roughnet(main,width = 600,height=600,font = "30px Herculanum")
+roughnet(main, width = 600, height=600, font = "30px Herculanum")
 ```
 
 

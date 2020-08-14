@@ -29,6 +29,9 @@ remotes::install_github("schochastics/roughnet")
 
 ## Example
 
+The package currently only works with {{igraph}} objects by setting
+styling elements as vertex/edge attributes.
+
 ``` r
 library(roughnet)
 library(igraph)
@@ -106,7 +109,7 @@ V(main)$label <- V(main)$name
 # position labels in the (c)enter of the vertex or (n)orth, (e)ast, (s)outh, or (w)est of it 
 V(main)$pos <- c("n","s","s","s","s","e","n","e","s","n") 
 
-roughnet(main,width = 600,height=600,font = "30px Herculanum")
+roughnet(main, width = 600, height=600, font = "30px Herculanum")
 ```
 
 ![](man/figures/avatar.png)
