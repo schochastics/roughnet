@@ -8,6 +8,7 @@ roughnet(
   g,
   roughness = c(1, 1),
   bowing = c(1, 1),
+  font = "30px Arial",
   width = NULL,
   height = NULL,
   elementId = NULL
@@ -19,6 +20,8 @@ roughnet(
 \item{roughness}{numeric vector for roughness of vertices and edges}
 
 \item{bowing}{numeric vector for bowing of vertices and edges}
+
+\item{font}{font size and font family for labels}
 
 \item{width}{width}
 
@@ -33,11 +36,14 @@ plot a network using rough.js
 the function recognizes the following attributes
 Vertex attributes (e.g. V(g)$shape):
 \itemize{
-\item \emph{shape} either "circle" or "rectangle"
+\item \emph{shape} one of "circle", "rectangle", "heart", "air", "earth", "fire", "water"
 \item \emph{fill} vertex fill color
 \item \emph{color} vertex stroke color
+\item \emph{stroke} stroke size
 \item \emph{fillstyle} one of "hachure", "solid", "zigzag", "cross-hatch", "dots", "sunburst", "dashed", "zigzag-line"
 \item \emph{size} vertex size
+\item \emph{label} vertex label
+\item \emph{pos} position of vertex label (c)enter, (n)orth, (e)ast, (s)outh, (w)est
 }
 
 Edge attributes (e.g. E(g)$color):
@@ -48,7 +54,7 @@ Edge attributes (e.g. E(g)$color):
 
 Default values are used if one of the attributes is not found.
 
-The result of a roughnet call can be prointed to file with \code{save_roughnet()}
+The result of a roughnet call can be printed to file with \code{save_roughnet()}
 
 More details on roughjs can be found on https://github.com/rough-stuff/rough/wiki
 }

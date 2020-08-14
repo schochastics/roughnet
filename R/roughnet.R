@@ -3,18 +3,21 @@
 #' @param g igraph object
 #' @param roughness numeric vector for roughness of vertices and edges
 #' @param bowing numeric vector for bowing of vertices and edges
+#' @param font font size and font family for labels
 #' @param width width
 #' @param height height
 #' @param elementId DOM id
 #' @details the function recognizes the following attributes
 #' Vertex attributes (e.g. V(g)$shape):
 #'
-#' * \emph{shape} either "circle" or "rectangle"
+#' * \emph{shape} one of "circle", "rectangle", "heart", "air", "earth", "fire", "water"
 #' * \emph{fill} vertex fill color
 #' * \emph{color} vertex stroke color
 #' * \emph{stroke} stroke size
 #' * \emph{fillstyle} one of "hachure", "solid", "zigzag", "cross-hatch", "dots", "sunburst", "dashed", "zigzag-line"
 #' * \emph{size} vertex size
+#' * \emph{label} vertex label
+#' * \emph{pos} position of vertex label (c)enter, (n)orth, (e)ast, (s)outh, (w)est
 #'
 #' Edge attributes (e.g. E(g)$color):
 #'
@@ -23,13 +26,15 @@
 #'
 #' Default values are used if one of the attributes is not found.
 #'
-#' The result of a roughnet call can be prointed to file with `save_roughnet()`
+#' The result of a roughnet call can be printed to file with `save_roughnet()`
 #'
 #' More details on roughjs can be found on https://github.com/rough-stuff/rough/wiki
 #' @export
-roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height = NULL, elementId = NULL) {
+roughnet <- function(g,roughness = c(1,1), bowing = c(1,1), font = "30px Arial",
+                     width = NULL, height = NULL, elementId = NULL) {
 
   # prepare styles ----
+  #vertices
   if(!"shape" %in% igraph::vertex_attr_names(g)){
     igraph::V(g)$shape <- "circle"
   }
@@ -62,6 +67,18 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     vfillstyle <- igraph::V(g)$fillstyle
   }
 
+  if(!"label" %in% igraph::vertex_attr_names(g)){
+    vlabel <- ""
+  } else{
+    vlabel <- igraph::V(g)$label
+  }
+  if(!"pos" %in% igraph::vertex_attr_names(g)){
+    vpos <- "c"
+  } else{
+    vpos <- igraph::V(g)$pos
+  }
+
+  #edges
   if(!"color" %in% igraph::edge_attr_names(g)){
     ecols <- "black"
   } else{
@@ -105,7 +122,12 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     fill  = vfill,
     fillstyle = vfillstyle,
     width = vstroke,
-    size = vsize)
+    size = vsize,
+    label = vlabel,
+    pos = vpos)
+
+  nodes$xf <- nodes$x
+  nodes$yf <- nodes$y
 
   nodes$x <- ifelse(nodes$shape!="circle",nodes$x-nodes$size/2,nodes$x)
   nodes$y <- ifelse(nodes$shape!="circle",nodes$y-nodes$size/2,nodes$y)
@@ -129,16 +151,28 @@ roughnet <- function(g,roughness = c(1,1),bowing = c(1,1),width = NULL, height =
     fill = "black",
     fillstyle = "solid",
     width = ewidth,
-    size = 1)
+    size = 1,
+    label = "",
+    pos = "c",
+    xf = 0,
+    yf = 0)
 
   edges$roughness <- roughness[2]
   edges$bowing <- bowing[2]
 
-  data <- rbind(edges,nodes1,nodes2)
+  if(!all(vlabel=="")){
+    nodes3 <- nodes2
+    nodes3$shape <- "text"
+    data <- rbind(edges,nodes1,nodes2,nodes3)
+  } else{
+    data <- rbind(edges,nodes1,nodes2)
+  }
+
 
 
   x <- list(
-    data=jsonlite::toJSON(data)
+    data=jsonlite::toJSON(data),
+    font=font
   )
 
   # create widget

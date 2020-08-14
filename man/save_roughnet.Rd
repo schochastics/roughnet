@@ -4,12 +4,14 @@
 \alias{save_roughnet}
 \title{Save roughnet plot to file}
 \usage{
-save_roughnet(rnet, file)
+save_roughnet(rnet, file, background = "white")
 }
 \arguments{
 \item{rnet}{result from calling the function \code{roughnet}}
 
 \item{file}{filename}
+
+\item{background}{string giving the html background color}
 }
 \description{
 Save roughnet plot to file

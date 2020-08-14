@@ -182,6 +182,34 @@ function drawEdge(rc, s) {
    });
 }
 
+function drawText(rc,ctx,s) {
+  if(s.pos==="c"){
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(s.label,Number(s.xf), Number(s.yf));
+  }
+  if(s.pos==="n"){
+    ctx.textAlign = "center";
+    ctx.textBaseline = "bottom";
+    ctx.fillText(s.label,Number(s.xf), Number(s.yf)-0.5 * Number(s.size));
+  }
+  if(s.pos==="s"){
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    ctx.fillText(s.label,Number(s.xf), Number(s.yf)+0.5 * Number(s.size));
+  }
+  if(s.pos==="e"){
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
+    ctx.fillText(s.label,Number(s.xf)+0.5 * Number(s.size), Number(s.yf));
+  }
+    if(s.pos==="w"){
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    ctx.fillText(s.label,Number(s.xf)-0.5 * Number(s.size), Number(s.yf));
+  }
+}
+
 HTMLWidgets.widget({
 
   name: 'roughnet',
@@ -206,8 +234,7 @@ HTMLWidgets.widget({
         // Create context for text shape
         const c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
-//          ctx.textAlign = "center";
-//          ctx.textBaseline = "middle";
+        ctx.font = x.font;
 
         x.data.map(function(s) {
           if (s.shape === "rectangle") {
@@ -234,6 +261,10 @@ HTMLWidgets.widget({
 
           if(s.shape === "edge"){
             drawEdge(rc,s);
+          }
+
+          if(s.shape === "text"){
+            drawText(rc,ctx,s);
           }
 
         });
