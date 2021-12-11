@@ -7,6 +7,7 @@
 #' @param width width
 #' @param height height
 #' @param elementId DOM id
+#' @param chunk_name markdown specific
 #' @details the function recognizes the following attributes
 #' Vertex attributes (e.g. V(g)$shape):
 #'
@@ -31,7 +32,7 @@
 #' More details on roughjs can be found on https://github.com/rough-stuff/rough/wiki
 #' @export
 roughnet <- function(g,roughness = c(1,1), bowing = c(1,1), font = "30px Arial",
-                     width = NULL, height = NULL, elementId = NULL) {
+                     width = NULL, height = NULL, elementId = NULL,chunk_name = "canvas") {
 
   # prepare styles ----
   #vertices
@@ -172,7 +173,8 @@ roughnet <- function(g,roughness = c(1,1), bowing = c(1,1), font = "30px Arial",
 
   x <- list(
     data=jsonlite::toJSON(data),
-    font=font
+    font=font,
+    id=chunk_name
   )
 
   # create widget

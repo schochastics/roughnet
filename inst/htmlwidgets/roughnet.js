@@ -183,6 +183,7 @@ function drawEdge(rc, s) {
 }
 
 function drawText(rc,ctx,s) {
+  ctx.fillStyle = s.color;
   if(s.pos==="c"){
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
@@ -223,16 +224,16 @@ HTMLWidgets.widget({
 
         // Create Canvas element in DOM
         var canvas = document.createElement("canvas");
-        canvas.setAttribute("id", "canvas");
+        canvas.setAttribute("id", x.id);
         canvas.setAttribute("width", width);
         canvas.setAttribute("height", height);
         el.appendChild(canvas);
 
         // Insert rough canvas in the new canvas element
-        const rc = rough.canvas(document.getElementById("canvas"));
+        const rc = rough.canvas(document.getElementById(x.id));
 
         // Create context for text shape
-        const c = document.getElementById("canvas");
+        const c = document.getElementById(x.id);
         var ctx = c.getContext("2d");
         ctx.font = x.font;
 

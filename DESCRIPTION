@@ -5,7 +5,7 @@ Authors@R:
     person(given = "David",
            family = "Schoch",
            role = c("aut", "cre"),
-           email = "david.schoch@manchester.ac.uk")
+           email = "david@schochastics.net")
 Description: Visualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.
 License: MIT + file LICENSE
 Encoding: UTF-8
