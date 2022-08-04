@@ -7,8 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/roughnet)](https://CRAN.R-project.org/package=roughnet)
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R-CMD-check](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Using the java script library [rough.js](https://roughjs.com/) to draw

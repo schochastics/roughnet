@@ -15,8 +15,9 @@ knitr::opts_chunk$set(
 # roughnet <img src="man/figures/logo.png" align="right" width="120px"/>
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/roughnet)](https://CRAN.R-project.org/package=roughnet)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/roughnet)](https://CRAN.R-project.org/package=roughnet)
 <!-- badges: end -->
 
 Using the java script library [rough.js](https://roughjs.com/) to draw sketchy, hand-drawn-like networks.  

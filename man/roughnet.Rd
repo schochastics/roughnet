@@ -11,7 +11,8 @@ roughnet(
   font = "30px Arial",
   width = NULL,
   height = NULL,
-  elementId = NULL
+  elementId = NULL,
+  chunk_name = "canvas"
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ roughnet(
 \item{height}{height}
 
 \item{elementId}{DOM id}
+
+\item{chunk_name}{markdown specific}
 }
 \description{
 plot a network using rough.js
@@ -57,4 +60,19 @@ Default values are used if one of the attributes is not found.
 The result of a roughnet call can be printed to file with \code{save_roughnet()}
 
 More details on roughjs can be found on https://github.com/rough-stuff/rough/wiki
+}
+\examples{
+library(igraph)
+
+g <- make_graph("Zachary")
+V(g)$shape <- "circle"
+V(g)$shape[c(1, 34)] <- "rectangle"
+V(g)$fill <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3")[membership(cluster_louvain(g))]
+V(g)$fillstyle <- c("hachure", "zigzag", "cross-hatch", "dots")[membership(cluster_louvain(g))]
+V(g)$color <- "black"
+V(g)$size <- 30
+V(g)$stroke <- 2
+E(g)$color <- "#AEAEAE"
+roughnet(g, width = 960, height = 600)
+
 }

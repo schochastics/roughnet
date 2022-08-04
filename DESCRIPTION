@@ -5,17 +5,17 @@ Authors@R:
     person(given = "David",
            family = "Schoch",
            role = c("aut", "cre"),
-           email = "david@schochastics.net")
+           email = "david@schochastics.net",
+           comment = c(ORCID = "0000-0003-2952-4812"))
 Description: Visualize networks using the javascript library roughjs. This allows to draw sketchy, hand-drawn-like networks.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.0
 Imports: 
     igraph,
     graphlayouts,
-    grDevices,
     jsonlite,
     htmlwidgets
 Suggests: 
