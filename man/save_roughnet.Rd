@@ -13,6 +13,9 @@ save_roughnet(rnet, file, background = "white")
 
 \item{background}{string giving the html background color}
 }
+\value{
+No return value, called for side effect
+}
 \description{
 Save roughnet plot to file
 }

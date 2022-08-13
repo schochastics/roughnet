@@ -2,6 +2,7 @@
 #' @param rnet result from calling the function `roughnet`
 #' @param file filename
 #' @param background string giving the html background color
+#' @return No return value, called for side effect
 #' @export
 save_roughnet <- function(rnet, file, background = "white") {
   if (!requireNamespace("pagedown", quietly = TRUE)) {

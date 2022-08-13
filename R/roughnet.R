@@ -8,6 +8,7 @@
 #' @param height height
 #' @param elementId DOM id
 #' @param chunk_name markdown specific
+#' @return htmlwidget containing the drawn network
 #' @details the function recognizes the following attributes
 #' Vertex attributes (e.g. V(g)$shape):
 #'
