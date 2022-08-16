@@ -5,9 +5,11 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/roughnet)](https://CRAN.R-project.org/package=roughnet)
-[![R-CMD-check](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/schochastics/roughnet/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+Downloads](http://cranlogs.r-pkg.org/badges/roughnet)](https://CRAN.R-project.org/package=roughnet)
 <!-- badges: end -->
 
 Using the java script library [rough.js](https://roughjs.com/) to draw
