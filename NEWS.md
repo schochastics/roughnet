@@ -1,3 +1,7 @@
+#roughnet 1.0.1
+
+* fixed missing URL and BUGREPORTS 
+
 # roughnet 1.0.0
 
 * Added features for node labels
