@@ -1,7 +1,7 @@
 url: https://schochastics.github.io/roughnet/
 template:
   bootstrap: 5
-  template: sketchy
+  template: Sketchy
 navbar:
   bg: none
   type: light
