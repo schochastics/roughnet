@@ -1,29 +1,10 @@
-title: roughnet
-destination: ../pkgdown_sites/roughnet
-
-home:
-  title: Draw sketchy networks in R
-  description: Using roughjs to draw sketchy, hand drawn-like networks in R
+url: https://schochastics.github.io/roughnet/
 template:
-  opengraph:
-    image:
-      src: man/figures/logo.png
-      alt: "roughnet - sketchy networks in R"
-    twitter:
-      creator: "@schochastics"
-      card: summary_large_image
-  params:
-    bootswatch: simplex
-  assets: pkgdown/
-
+  bootstrap: 5
+  template: sketchy
 navbar:
-  right:
-      - icon: fa-newspaper-o
-        text: "News"
-        href: news/index.html
-      - icon: fa-file-code-o
-        text: "Functions"
-        href: reference/index.html
-      - icon: fa-github fa-lg
-        text: "Github"
-        href: https://github.com/schochastics/roughnet
+  bg: none
+  type: light
+  structure:
+    left:  [intro, reference, articles, news]
+    right: [github]
