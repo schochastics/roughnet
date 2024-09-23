@@ -9,7 +9,7 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/roughnet)](https://CRAN.R-project.org/package=roughnet)
 [![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/roughnet)](https://CRAN.R-project.org/package=roughnet)
+Downloads](https://cranlogs.r-pkg.org/badges/roughnet)](https://CRAN.R-project.org/package=roughnet)
 <!-- badges: end -->
 
 Using the java script library [rough.js](https://roughjs.com/) to draw
